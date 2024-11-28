@@ -1,0 +1,30 @@
+type Activity {
+  id: Int!
+  title: String!
+  venue: String!
+  date: String!
+  startTime: String!
+  endTime: String!
+  fee: Float!
+  maxPlayers: Int!
+  currentPlayers: Int!
+  status: String!
+}
+
+input ActivityInput {
+  title: String!
+  venue: String!
+  date: String!
+  startTime: String!
+  endTime: String!
+  fee: Float!
+  maxPlayers: Int!
+}
+
+type Query {
+  activitiesList: [Activity!]!
+}
+
+type Mutation {
+  addActivity(activity: ActivityInput!): Activity
+}
