@@ -1,6 +1,7 @@
 // Clear existing data
 db.activities.remove({});
 db.counters.remove({});
+db.users.remove({});
 
 // Initial data
 const activities = [
@@ -29,3 +30,4 @@ print('Created counter with current =', count);
 
 // Create index
 db.activities.createIndex({ id: 1 }, { unique: true });
+db.users.createIndex({ googleId: 1 }, { unique: true });

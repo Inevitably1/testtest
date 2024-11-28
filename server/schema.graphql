@@ -27,4 +27,13 @@ type Query {
 
 type Mutation {
   addActivity(activity: ActivityInput!): Activity
+  updateUserSkillLevel(skillLevel: String!): User
+}
+
+type User {
+  googleId: String!
+  displayName: String!
+  email: String
+  skillLevel: String
+  lastLogin: String
 }
