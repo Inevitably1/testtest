@@ -15,7 +15,9 @@ const activities = [
     fee: 30,
     maxPlayers: 8,
     currentPlayers: 0,
-    status: 'upcoming'
+    status: 'upcoming',
+    minSkillLevel: 'low_beginner',
+    maxSkillLevel: 'high_intermediate'
   }
 ];
 

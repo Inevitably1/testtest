@@ -9,6 +9,8 @@ type Activity {
   maxPlayers: Int!
   currentPlayers: Int!
   status: String!
+  minSkillLevel: String!
+  maxSkillLevel: String!
 }
 
 input ActivityInput {
@@ -19,15 +21,8 @@ input ActivityInput {
   endTime: String!
   fee: Float!
   maxPlayers: Int!
-}
-
-type Query {
-  activitiesList: [Activity!]!
-}
-
-type Mutation {
-  addActivity(activity: ActivityInput!): Activity
-  updateUserSkillLevel(skillLevel: String!): User
+  minSkillLevel: String!
+  maxSkillLevel: String!
 }
 
 type User {
@@ -37,3 +32,12 @@ type User {
   skillLevel: String
   lastLogin: String
 }
+
+type Query {
+  activitiesList: [Activity!]!
+}
+
+type Mutation {
+  addActivity(activity: ActivityInput!): Activity
+  updateUserSkillLevel(skillLevel: String!): User
+} 

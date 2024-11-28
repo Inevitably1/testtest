@@ -14,6 +14,15 @@ app.use(express.static('public'));
 
 const typeDefs = fs.readFileSync('./server/schema.graphql', 'utf-8');
 
+async function getNextSequence(name) {
+  const result = await db.collection('counters').findOneAndUpdate(
+    { _id: name },
+    { $inc: { current: 1 } },
+    { returnDocument: 'after', upsert: true }
+  );
+  return result.value.current;
+}
+
 const resolvers = {
   Query: {
     activitiesList: async () => {
@@ -23,12 +32,15 @@ const resolvers = {
   },
   Mutation: {
     addActivity: async (_, { activity }) => {
-      // 添加一个计数器来生成ID
-      const result = await db.collection('activities').insertOne({
+      const newActivity = {
         ...activity,
+        id: await getNextSequence('activities'),
         currentPlayers: 0,
-        status: 'upcoming'
-      });
+        status: 'upcoming',
+        created: new Date()
+      };
+
+      const result = await db.collection('activities').insertOne(newActivity);
       return result.ops[0];
     },
     updateUserSkillLevel: async (_, { skillLevel }, { req }) => {
