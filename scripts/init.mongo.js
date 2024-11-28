@@ -1,13 +1,13 @@
-// 清空现有数据
+// Clear existing data
 db.activities.remove({});
 db.counters.remove({});
 
-// 初始数据
+// Initial data
 const activities = [
   {
     id: 1,
-    title: '周末欢乐打球',
-    venue: '体育中心1号场',
+    title: 'Weekend Badminton Fun',
+    venue: 'Sports Center Court 1',
     date: '2024-04-01',
     startTime: '14:00',
     endTime: '16:00', 
@@ -18,14 +18,14 @@ const activities = [
   }
 ];
 
-// 插入数据
+// Insert data
 db.activities.insertMany(activities);
 const count = db.activities.count();
 print('Inserted', count, 'activities');
 
-// 创建计数器
+// Create counter
 db.counters.insert({_id: 'activities', current: count});
 print('Created counter with current =', count);
 
-// 创建索引
+// Create index
 db.activities.createIndex({ id: 1 }, { unique: true });

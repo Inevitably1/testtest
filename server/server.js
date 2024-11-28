@@ -1,4 +1,4 @@
-// 确保在任何其他代码之前添加globalThis polyfill
+// Add globalThis polyfill before any other code
 if (typeof globalThis === 'undefined') {
   global.globalThis = global;
 }
@@ -24,7 +24,7 @@ const resolvers = {
   },
   Mutation: {
     addActivity: async (_, { activity }) => {
-      // 添加一个计数器来生成ID
+      // Add a counter to generate ID
       const result = await db.collection('activities').insertOne({
         ...activity,
         currentPlayers: 0,

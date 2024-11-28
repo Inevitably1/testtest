@@ -41,18 +41,18 @@ class ActivityList extends React.Component {
     const { activities } = this.state;
     return (
       <div>
-        <h1>羽毛球活动列表</h1>
+        <h1>Badminton Activity List</h1>
         <table className="bordered-table">
           <thead>
             <tr>
               <th>ID</th>
-              <th>标题</th>
-              <th>场地</th>
-              <th>日期</th>
-              <th>时间</th>
-              <th>费用</th>
-              <th>人数</th>
-              <th>状态</th>
+              <th>Title</th>
+              <th>Venue</th>
+              <th>Date</th>
+              <th>Time</th>
+              <th>Fee</th>
+              <th>Players</th>
+              <th>Status</th>
             </tr>
           </thead>
           <tbody>
@@ -63,7 +63,7 @@ class ActivityList extends React.Component {
                 <td>{activity.venue}</td>
                 <td>{activity.date}</td>
                 <td>{activity.startTime}-{activity.endTime}</td>
-                <td>¥{activity.fee}</td>
+                <td>${activity.fee}</td>
                 <td>{activity.currentPlayers}/{activity.maxPlayers}</td>
                 <td>{activity.status}</td>
               </tr>

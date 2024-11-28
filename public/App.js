@@ -109,12 +109,12 @@ var ActivityList = /*#__PURE__*/function (_React$Component) {
     key: "render",
     value: function render() {
       var activities = this.state.activities;
-      return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("h1", null, "\u7FBD\u6BDB\u7403\u6D3B\u52A8\u5217\u8868"), /*#__PURE__*/React.createElement("table", {
+      return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("h1", null, "Badminton Activity List"), /*#__PURE__*/React.createElement("table", {
         className: "bordered-table"
-      }, /*#__PURE__*/React.createElement("thead", null, /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("th", null, "ID"), /*#__PURE__*/React.createElement("th", null, "\u6807\u9898"), /*#__PURE__*/React.createElement("th", null, "\u573A\u5730"), /*#__PURE__*/React.createElement("th", null, "\u65E5\u671F"), /*#__PURE__*/React.createElement("th", null, "\u65F6\u95F4"), /*#__PURE__*/React.createElement("th", null, "\u8D39\u7528"), /*#__PURE__*/React.createElement("th", null, "\u4EBA\u6570"), /*#__PURE__*/React.createElement("th", null, "\u72B6\u6001"))), /*#__PURE__*/React.createElement("tbody", null, activities.map(function (activity) {
+      }, /*#__PURE__*/React.createElement("thead", null, /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("th", null, "ID"), /*#__PURE__*/React.createElement("th", null, "Title"), /*#__PURE__*/React.createElement("th", null, "Venue"), /*#__PURE__*/React.createElement("th", null, "Date"), /*#__PURE__*/React.createElement("th", null, "Time"), /*#__PURE__*/React.createElement("th", null, "Fee"), /*#__PURE__*/React.createElement("th", null, "Players"), /*#__PURE__*/React.createElement("th", null, "Status"))), /*#__PURE__*/React.createElement("tbody", null, activities.map(function (activity) {
         return /*#__PURE__*/React.createElement("tr", {
           key: activity.id
-        }, /*#__PURE__*/React.createElement("td", null, activity.id), /*#__PURE__*/React.createElement("td", null, activity.title), /*#__PURE__*/React.createElement("td", null, activity.venue), /*#__PURE__*/React.createElement("td", null, activity.date), /*#__PURE__*/React.createElement("td", null, activity.startTime, "-", activity.endTime), /*#__PURE__*/React.createElement("td", null, "\xA5", activity.fee), /*#__PURE__*/React.createElement("td", null, activity.currentPlayers, "/", activity.maxPlayers), /*#__PURE__*/React.createElement("td", null, activity.status));
+        }, /*#__PURE__*/React.createElement("td", null, activity.id), /*#__PURE__*/React.createElement("td", null, activity.title), /*#__PURE__*/React.createElement("td", null, activity.venue), /*#__PURE__*/React.createElement("td", null, activity.date), /*#__PURE__*/React.createElement("td", null, activity.startTime, "-", activity.endTime), /*#__PURE__*/React.createElement("td", null, "$", activity.fee), /*#__PURE__*/React.createElement("td", null, activity.currentPlayers, "/", activity.maxPlayers), /*#__PURE__*/React.createElement("td", null, activity.status));
       }))));
     }
   }]);
